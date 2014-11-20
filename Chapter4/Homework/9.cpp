@@ -5,8 +5,6 @@
 using namespace std;
 
 
-
-
 struct Candy
 {
 	string name;
@@ -16,18 +14,38 @@ struct Candy
 
 int main()
 {
-	Candy *Mix[3] = new Candy[3];
-		//Mix[0] = {"MnN", 1.1 ,100},
-		//Mix[1] = {"QQ", 2.2, 200},
-		//Mix[2] = {"Wangzai", 3.3 , 300}
+	int fatties;
+	cout << "How many fatties(candies) do you want: ";
+	cin >> fatties;
+	cin.get();
+	Candy* fat = new Candy[fatties];
 
-		Mix[0]
+	for (int i = 0; i < fatties; ++i)
+	{
+		cout << "ok, name of the " << i+1 << "th fatty: ";
+		getline(cin, fat[i].name);
 
 
-	cout << "1. " << Mix[0] << " " << Mix[0]<< " " << Mix[0]<< endl;
-	cout << "2. " << Mix[1] << " " << Mix[1]<< " " << Mix[1]<< endl;
-	cout << "3. " << Mix[2] << " " << Mix[2]<< " " << Mix[2]<< endl;
+		cout << "ok, weight of the " << i+1 << "th fatty: ";
+		cin >> fat[i].weight;
+		cin.get();
 
-	delete [] Mix;
+		cout << "ok, calories of the " << i+1 << "th fatty: ";
+		cin >> fat[i].calories;
+		cin.get();
+	}
+
+
+	for (int i = 0; i < fatties; ++i)
+	{
+		cout << " " << endl;
+		cout << "ok, name of the " << i+1 << "th fatty is " << fat[i].name << endl;
+		cout << "ok, weight of the " << i+1 << "th fatty is " << fat[i].weight << endl;
+		cout << "ok, calories of the " << i+1 << "th fatty is " << fat[i].calories << endl;
+	}
+
+
+	delete [] fat;
 	return 0;
+
 }

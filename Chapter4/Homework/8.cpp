@@ -27,6 +27,7 @@ int main()
 	//of pizzas that users entered.
 	Pizza* info = new Pizza[p_number];
 
+	
 	//Get information from users
 	//Ask them p_number times.
 	for (int i = 0; i < p_number; i ++){
